@@ -1,0 +1,12 @@
+Test time!
+
+cd /to/the/directory/you/want/to/work/in
+wget http://cgi.cse.unsw.edu.au/~nickw/1917/prac3.zip
+unzip prac3.zip
+cd prac3
+ls -l 
+
+# Work on the files q1.c and q2.c
+# Instructions are in the files!
+# Mark with:
+./mark
