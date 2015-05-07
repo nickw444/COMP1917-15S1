@@ -1,5 +1,8 @@
 
-typedef struct linekdList * LinkedList;
+typedef struct _linkedList * LinkedList;
 
-// Get Num Nodes
-// Add Node
+
+LinkedList newLinkedList(void);
+void addNode(LinkedList l, int newValue);
+int getNumNodes(LinkedList l);
+
