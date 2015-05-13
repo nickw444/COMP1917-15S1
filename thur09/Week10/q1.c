@@ -23,7 +23,8 @@ int main(int argc, char const *argv[])
 
 
 /*
-This compiles to this:
+This compiles to this using `otool -tvV a.out`:
+
 
 (__TEXT,__text) section
 _main:
