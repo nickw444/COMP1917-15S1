@@ -1,5 +1,6 @@
 #include "LinkedList.h"
 #include <stdlib.h>
+#include <stdio.h>
 
 typedef struct node {
     int value;
@@ -21,17 +22,26 @@ LinkedList newLinkedList(void) {
 void addNode(LinkedList l, int newValue) {
     l->num_nodes += 1;
     node * n = malloc(sizeof(node));
+    n->value = newValue;
     n->next = l->head;
     l->head = n;
 }
 int getNumNodes(LinkedList l) {
     return l->num_nodes;
-    // node * curr = l->head;
-    // int count = 0;
-    // while (curr != NULL) {
-    //     count ++;
-    //     curr = curr->next;
-    // }
-    // return count;
+}
+int getSmallest(LinkedList l) {
+    node * curr = l->head;
+    int min = -1;
+    if (curr != NULL) {
+        min = curr->value;
+        while (curr != NULL) {
+            if (curr->value < min) {
+                min = curr->value;
+            }
+            curr = curr->next;
+        }
+    }
+
+    return min;
 }
 
