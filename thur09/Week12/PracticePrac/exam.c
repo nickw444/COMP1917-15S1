@@ -27,6 +27,45 @@ int numItems (list l) {
     return length;
 }
 
+
+/*******
+An optimized solution.
+*******/
+void frontBackSplit(list sourceList, list frontList, list backList) {
+    int length = numItems(sourceList);
+    if (length > 0) {
+        int n = length;
+        if (n % 2 == 0) {
+            n = n / 2;
+        }
+        else {
+            n = n /2 + 1;
+        }
+
+        // Move the start of sourceList to frontList. We will then
+        // detatch backList upon iterating.
+        int i = 0;
+
+        frontList->head = sourceList->head;
+        sourceList->head = NULL;
+        link curr = frontList->head;
+        while (i < n - 1) {
+            curr = curr->next;
+            i ++;
+        }
+
+        // curr is now the node we need to detach.
+        backList->head = curr->next;
+        curr->next = NULL;
+    }
+}
+
+
+/**********
+A not so good solution.
+(Still works though)
+**********/
+
 void appendToEnd(list l, node * n) {
     link current = l->head;
     link prev = NULL;
@@ -43,10 +82,9 @@ void appendToEnd(list l, node * n) {
         // Element existed. The last element is prev.
         prev->next = n;
     }
-
 }
 
-void frontBackSplit(list sourceList, list frontList, list backList) {
+void frontBackSplitPoorSolution(list sourceList, list frontList, list backList) {
     // Put your code in here
     int length = numItems(sourceList);
     int n = length;

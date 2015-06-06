@@ -48,5 +48,47 @@ int main(int argc, char *argv[])
     printf("BackList: ");
     printList(backList);
 
+    // Yolo, memory leaks.
+
+    l = makeList(10);
+    frontList = makeList(0);
+    backList = makeList(0);
+
+    printf("sourceList: ");
+    printList(l);
+    printf("FrontList: ");
+    printList(frontList);
+    printf("BackList: ");
+    printList(backList);
+
+    frontBackSplit(l, frontList, backList);
+    printf("After Splitting: \n");
+    printf("sourceList: ");
+    printList(l);
+    printf("FrontList: ");
+    printList(frontList);
+    printf("BackList: ");
+    printList(backList);
+
+    l = makeList(0);
+    frontList = makeList(0);
+    backList = makeList(0);
+
+    printf("sourceList: ");
+    printList(l);
+    printf("FrontList: ");
+    printList(frontList);
+    printf("BackList: ");
+    printList(backList);
+
+    frontBackSplit(l, frontList, backList);
+    printf("After Splitting: \n");
+    printf("sourceList: ");
+    printList(l);
+    printf("FrontList: ");
+    printList(frontList);
+    printf("BackList: ");
+    printList(backList);
+
     return EXIT_SUCCESS;
 }

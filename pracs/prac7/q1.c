@@ -29,7 +29,15 @@ int largestNode(list l) {
     // This is very similar to the last prac we did.
     // Notable the only thing that changed is the list struct representation
     // It is the same representation you were given during the practise prac.
-    return 0;
+    int max = 0;
+    node * curr = l->head;
+    while (curr != NULL) {
+        if (curr->value > max) {
+            max = curr->value;
+        }
+        curr = curr->next;
+    }      
+    return max;
 }
 
 int main(int argc, char *argv[]) {
